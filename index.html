@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <header class="hero" style="position: relative; overflow: hidden; height: 100vh; background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=2070'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    
+    <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+        <span style="width: 40px; height: 1px; background: var(--gold-primary);"></span>
+        <p style="letter-spacing: 5px; color: var(--gold-soft); text-transform: uppercase; font-size: 0.8rem; margin: 0; font-weight: 600;">Established 2015</p>
+        <span style="width: 40px; height: 1px; background: var(--gold-primary);"></span>
+    </div>
+
+    <h1 style="font-size: clamp(4rem, 15vw, 8rem); color: var(--gold-primary); margin: 0; line-height: 0.9; text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        EYVA <br>
+        <span style="font-size: 0.3em; letter-spacing: 15px; color: var(--luxury-white); font-weight: 300; vertical-align: middle;">LOUNGE</span>
+    </h1>
+
+    <div style="margin-top: 40px; max-width: 600px;">
+        <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: var(--luxury-white); margin-bottom: 10px;">
+            "Where the thrill of the game meets the soul of luxury."
+        </p>
+        <p style="letter-spacing: 3px; color: var(--gold-soft); text-transform: uppercase; font-size: 0.75rem; opacity: 0.8;">
+            Goodmayes' Premier Social Sanctuary
+        </p>
+    </div>
+
+    <div style="position: absolute; bottom: 40px; animation: bounce 2s infinite;">
+        <p style="font-size: 0.6rem; letter-spacing: 3px; color: var(--gold-primary); text-transform: uppercase; margin-bottom: 10px;">Explore</p>
+        <div style="width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold-primary), transparent); margin: 0 auto;"></div>
+    </div>
+</header>
+
+<style>
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+</style>
+    <style>
+        :root {
+            --gold-primary: #c5a059;
+            --gold-soft: #e2c285;
+            --deep-black: #0d0d0d;
+            --off-black: #1a1a1a;
+            --luxury-white: #f4f4f4;
+            --text-muted: #a0a0a0;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--deep-black); color: var(--luxury-white); margin: 0; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; letter-spacing: 1px; }
+
+        /* --- NAVIGATION --- */
+        .menu-btn { 
+            position: fixed; top: 30px; left: 30px; z-index: 1001; cursor: pointer; 
+            display: flex; flex-direction: column; gap: 7px; background: rgba(197, 160, 89, 0.1); 
+            padding: 15px; border: 1px solid var(--gold-primary); backdrop-filter: blur(10px); 
+        }
+        .menu-btn span { display: block; width: 30px; height: 1px; background: var(--gold-primary); transition: 0.4s; }
+
+        .side-nav { 
+            height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; 
+            background-color: var(--deep-black); overflow-x: hidden; transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); 
+            padding-top: 100px; border-right: 1px solid var(--gold-primary); 
+        }
+        .side-nav a { 
+            padding: 15px 50px; text-decoration: none; font-size: 1rem; color: var(--text-muted); 
+            display: block; transition: 0.3s; text-transform: uppercase; letter-spacing: 3px; 
+        }
+        .side-nav a:hover { color: var(--gold-primary); padding-left: 60px; }
+
+        /* --- SECTIONS --- */
+        section { padding: 100px 10%; min-height: 80vh; border-bottom: 1px solid #222; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=2070'); background-size: cover; }
+        .luxury-header { font-size: 3rem; color: var(--gold-primary); margin-bottom: 40px; text-transform: uppercase; border-bottom: 2px solid var(--gold-primary); display: inline-block; padding-bottom: 10px; }
+        
+        /* --- MENU GRID --- */
+        .menu-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px; }
+        .menu-cat { margin-bottom: 50px; }
+        .menu-cat h3 { color: var(--gold-soft); border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; }
+        .menu-item { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dotted #444; padding-bottom: 8px; transition: 0.3s; }
+        .menu-item:hover { border-color: var(--gold-primary); }
+        .item-info { flex: 1; }
+        .item-name { font-weight: 600; color: var(--luxury-white); display: block; font-size: 0.95rem; }
+        .item-sub { font-size: 0.75rem; color: var(--text-muted); display: block; font-style: italic; margin-top: 2px; }
+        .item-price { color: var(--gold-primary); font-family: 'Playfair Display'; font-weight: bold; margin-left: 15px; font-size: 1.1rem; }
+
+        .flavor-list { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 4px; }
+        .flavor-list strong { color: var(--gold-soft); text-transform: uppercase; font-size: 0.75rem; }
+
+        .btn-luxury { padding: 12px 30px; border: 1px solid var(--gold-primary); background: transparent; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 2px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .btn-luxury:hover { background: var(--gold-primary); color: black; }
+        .info-panel { background: var(--off-black); padding: 40px; border: 1px solid var(--gold-primary); line-height: 1.8; }
+        
+        /* Map Styling */
+        .map-wrapper { margin-top: 30px; border: 1px solid var(--gold-primary); overflow: hidden; }
+        .map-container { width: 100%; height: 450px; filter: grayscale(1) invert(0.9); border: none; }
+        
+        .dev-footer { background: var(--off-black); padding: 60px 20px; text-align: center; border-top: 1px solid var(--gold-primary); }
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="menu-btn" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+    </div>
+
+    <div id="mySidenav" class="side-nav">
+        <a href="#about" onclick="toggleNav()">1. About Us</a>
+        <a href="#menu" onclick="toggleNav()">2. The Menu</a>
+        <a href="#hire" onclick="toggleNav()">3. Private Hire</a>
+        <a href="#events" onclick="toggleNav()">4. Events</a>
+        <a href="#contact" onclick="toggleNav()">5. Contact Us</a>
+    </div>
+
+
+
+<section id="about" style="padding: 120px 10%; background: linear-gradient(to bottom, #0d0d0d, #141414);">
+    <div style="text-align: center; margin-bottom: 80px;">
+        <h2 class="luxury-header">The Experience</h2>
+        <p style="color: var(--gold-soft); text-transform: uppercase; letter-spacing: 6px; font-size: 0.9rem; margin-top: 10px;">Where Precision Meets Passion</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+        
+        <div class="info-panel" style="border-top: 3px solid var(--gold-primary); transition: 0.4s; position: relative; overflow: hidden;">
+            <div style="font-size: 0.7rem; color: var(--gold-primary); letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase;">The Arena</div>
+            <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 20px;">Elite Cue Sports</h3>
+            <p style="font-weight: 300; font-size: 0.95rem; color: #ccc;">
+                Experience the finest tables in Goodmayes. Whether you prefer the fast-paced strategy of <strong>American Pool</strong>, the calculated precision of <strong>English Pool</strong>, or the professional standard of our <strong>Snooker</strong> tables, we provide the perfect environment for both casual players and serious competitors.
+            </p>
+        </div>
+
+        <div class="info-panel" style="border-top: 3px solid var(--gold-primary); background: #121212;">
+            <div style="font-size: 0.7rem; color: var(--gold-primary); letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase;">Interactive Social</div>
+            <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 20px;">Beyond the Table</h3>
+            <p style="font-weight: 300; font-size: 0.95rem; color: #ccc;">
+                The social experience extends further with our professional <strong>Table Tennis</strong> setup and high-definition <strong>PlayStation</strong> lounges. From high-intensity rallies to immersive digital gaming, Eyva Lounge is the definitive hub for modern entertainment.
+            </p>
+        </div>
+
+        <div class="info-panel" style="border-top: 3px solid var(--gold-primary);">
+            <div style="font-size: 0.7rem; color: var(--gold-primary); letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase;">The Retreat</div>
+            <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 20px;">Lounge & Bar</h3>
+            <p style="font-weight: 300; font-size: 0.95rem; color: #ccc;">
+                Unwind in our signature <strong>Shisha Lounge</strong> featuring premium world-renowned blends. Complement your evening with our curated selection of <strong>Ice-Cold Beers</strong>, <strong>Fine Spirits</strong>, and <strong>Artisan Cocktails</strong>, crafted by our expert mixologists.
+            </p>
+        </div>
+
+    </div>
+
+    <div style="margin-top: 60px; padding: 30px; border: 1px solid rgba(197, 160, 89, 0.2); text-align: center; background: rgba(197, 160, 89, 0.03);">
+        <p style="font-style: italic; color: var(--luxury-white); font-family: 'Playfair Display'; font-size: 1.2rem;">
+            "A sanctuary designed for those who appreciate the finer details of a night out."
+        </p>
+    </div>
+</section>
+
+    <section id="menu">
+        <h2 class="luxury-header">The Menu</h2>
+        <div class="menu-container">
+            
+            <div class="menu-cat">
+                <h3>Shisha Lounge</h3>
+                <div class="menu-item"><span class="item-name">Single Flavor Head</span><span class="item-price">25.00</span></div>
+                <div class="menu-item"><span class="item-name">Mixed Flavor Head</span><span class="item-price">30.00</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Ice Pipe</span><span class="item-sub">Sub-zero cooling attachment</span></div><span class="item-price">5.00</span></div>
+                
+                <div class="flavor-list">
+                    <strong>Al Fakher:</strong> Mint, Grape, Double Apple, Watermelon, Berry, Strawberry, Peach, Lemon.<br>
+                    <strong>Savacco Premium:</strong> Frozen Smurf, G6 On The Rocks (Grapefruit Freeze), Purple Rain, Black Mamba, Magna Carta (Cuban Mojito), Passionova, Swizztastic.<br>
+                    <strong>Starbuzz:</strong> Blue Mist, Pink Lady, Iron Man, Geisha, Pirate's Cave, Safari Melon Dew.
+                </div>
+            </div>
+
+            <div class="menu-cat">
+                <h3>Signature Cocktails</h3>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Pornstar Martini</span><span class="item-sub">Absolut Vodka, Passionfruit pureé, vanilla & Prosecco shot</span></div><span class="item-price">9.95</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Strawberry Mojito</span><span class="item-sub">Bacardi Rum, fresh mint, lime, strawberry pureé & soda</span></div><span class="item-price">9.95</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Long Island Iced Tea</span><span class="item-sub">Vodka, Gin, Rum, Tequila, Triple Sec, Lemon & Cola</span></div><span class="item-price">11.95</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Espresso Martini</span><span class="item-sub">Absolut Vodka, Kahlúa, fresh espresso & sugar syrup</span></div><span class="item-price">9.95</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Sex on the Beach</span><span class="item-sub">Vodka, Peach Schnapps, orange & cranberry juice</span></div><span class="item-price">9.95</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Blue Hawaii</span><span class="item-sub">Rum, Blue Curaçao, pineapple juice & coconut cream</span></div><span class="item-price">9.95</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Pina Colada</span><span class="item-sub">Bacardi, Malibu, coconut pureé & pineapple juice</span></div><span class="item-price">9.95</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Tequila Sunrise</span><span class="item-sub">Tequila Silver, orange juice & Grenadine syrup</span></div><span class="item-price">9.95</span></div>
+            </div>
+
+            <div class="menu-cat">
+                <h3>Bar & Cellar</h3>
+                <div class="menu-item"><span class="item-name">Corona / Peroni / Heineken / Budweiser</span><span class="item-price">4.00</span></div>
+                <div class="menu-item"><span class="item-name">Desperado / Birra Moretti</span><span class="item-price">4.50</span></div>
+                <div class="menu-item"><span class="item-name">Efici / Tuborg Gold / Bulmers Cider</span><span class="item-price">5.50</span></div>
+                <div class="menu-item"><span class="item-name">Stella Artois</span><span class="item-price">3.50</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">House Wine (Glass)</span><span class="item-sub">Red, White or Rosé</span></div><span class="item-price">7.50</span></div>
+                <div class="menu-item"><div class="item-info"><span class="item-name">Prosecco (Bottle)</span><span class="item-sub">Classic Italian Sparkling</span></div><span class="item-price">29.95</span></div>
+            </div>
+
+            <div class="menu-cat">
+                <h3>Lounge Snacks</h3>
+                <div class="menu-item"><span class="item-name">Doritos (Original / Tangy Cheese / Flaming Hot)</span><span class="item-price">3.00</span></div>
+                <div class="menu-item"><span class="item-name">Cashew Nuts / Roasted Peanuts / Salted Peanuts</span><span class="item-price">2.50</span></div>
+                <div class="menu-item"><span class="item-name">Cokonat Chocolate / Pistachios</span><span class="item-price">2.00</span></div>
+                <div class="menu-item"><span class="item-name">Kinder Bueno / Snickers / Twix / KitKat</span><span class="item-price">1.50</span></div>
+                <div class="menu-item"><span class="item-name">Walkers Crisps / 7Days Bake Rolls</span><span class="item-price">1.50</span></div>
+            </div>
+
+            <div class="menu-cat">
+                <h3>Soft & Hot Beverages</h3>
+                <div class="menu-item"><span class="item-name">Redbull / J2O / Appletiser</span><span class="item-price">3.00</span></div>
+                <div class="menu-item"><span class="item-name">Coke / Diet Coke / Fanta / Sprite / Still Water</span><span class="item-price">2.50</span></div>
+                <div class="menu-item"><span class="item-name">Orange / Pineapple / Apple / Cranberry Juice</span><span class="item-price">2.50</span></div>
+                <div class="menu-item"><span class="item-name">Iced Latte / Vanilla Latte / Caramel Latte</span><span class="item-price">4.50</span></div>
+                <div class="menu-item"><span class="item-name">Cappuccino / Americano / Latte / Hot Chocolate</span><span class="item-price">3.50</span></div>
+                <div class="menu-item"><span class="item-name">Tea (English / Mint / Green / Lemon / Earl Grey)</span><span class="item-price">2.50</span></div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="luxury-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2px; background: var(--gold-primary); border: 1px solid var(--gold-primary);">
+    
+    <section id="hire" style="background: var(--off-black); padding: 80px 10%; margin: 0; border: none;">
+        <h2 class="luxury-header" style="font-size: 2.2rem; margin-bottom: 20px;">Private Hire</h2>
+        <p style="color: var(--gold-soft); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 30px;">Exclusivity Defined</p>
+        
+        <div style="line-height: 1.8; color: var(--luxury-white); font-weight: 300;">
+            <p>Elevate your next celebration at Eyva Lounge. Our venue provides the perfect backdrop for corporate gatherings, birthday celebrations, and exclusive social soirées.</p>
+            <ul style="list-style: none; padding: 0; margin: 30px 0;">
+                <li style="margin-bottom: 15px;"><span style="color: var(--gold-primary); margin-right: 10px;">•</span> Full Venue or VIP Area Buyouts</li>
+                <li style="margin-bottom: 15px;"><span style="color: var(--gold-primary); margin-right: 10px;">•</span> Bespoke Shisha & Cocktail Packages</li>
+                <li style="margin-bottom: 15px;"><span style="color: var(--gold-primary); margin-right: 10px;">•</span> Professional Catering Options Available</li>
+            </ul>
+            <a href="mailto:arsh.lakers@gmail.com?subject=Private Hire Inquiry" class="btn-luxury">Request a Proposal</a>
+        </div>
+    </section>
+
+    <section id="events" style="background: var(--deep-black); padding: 80px 10%; margin: 0; border: none;">
+        <h2 class="luxury-header" style="font-size: 2.2rem; margin-bottom: 20px;">Live Events</h2>
+        <p style="color: var(--gold-soft); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 30px;">The Heart of Goodmayes</p>
+        
+        <div class="event-card" style="margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #222;">
+            <h4 style="color: var(--gold-primary); margin-bottom: 5px; font-size: 1.2rem;">Snooker Tournament Sundays</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;">Every Sunday from 6:00 PM</p>
+            <p style="font-weight: 300;">Join the elite cueists of East London for our weekly handicap tournament. High stakes and precision play.</p>
+        </div>
+
+        <div class="event-card" style="margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #222;">
+            <h4 style="color: var(--gold-primary); margin-bottom: 5px; font-size: 1.2rem;">Elite Sports Screenings</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;">Premier League | Champions League | Boxing</p>
+            <p style="font-weight: 300;">Watch the world's biggest matches in stunning 4K on our cinematic lounge screens.</p>
+        </div>
+
+        <p style="font-size: 0.75rem; color: var(--text-muted); letter-spacing: 1px;">Follow our social media for flash event announcements.</p>
+    </section>
+</div>
+
+    <section id="contact">
+        <h2 class="luxury-header">Find Us</h2>
+        <div class="info-panel">
+            <p><strong>Location:</strong> 13 Goodmayes Rd, Ilford IG3 9UH</p>
+            <p><strong>Opening Hours:</strong><br>
+               Mon - Thu: 4:00 PM - 2:00 AM<br>
+               Fri - Sun: 2:00 PM - 3:00 AM</p>
+            <a href="https://maps.google.com/?cid=6318138311778918837&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="btn-luxury">Get Directions</a>
+            
+            <div class="map-wrapper">
+                <iframe class="map-container" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.245450821033!2d0.10847587711475704!3d51.5664534718265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a5afa6c93bc1%3A0x57ae9151d35e61b5!2sGoodmayes%20snooker%20pool%20club%20%26%20Eyva%20Lounge!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="parking" style="padding: 100px 10%; background: var(--off-black); border-bottom: 1px solid #222;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
+        
+        <div>
+            <h2 class="luxury-header" style="font-size: 2.2rem; margin-bottom: 20px;">Seamless Arrival</h2>
+            <p style="color: var(--gold-soft); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 30px;">Hassle-Free Parking</p>
+            
+            <div style="line-height: 1.8; color: var(--luxury-white); font-weight: 300;">
+                <p>We believe your luxury experience should begin before you even step through our doors. Eyva Lounge is perfectly positioned for easy access.</p>
+                
+                <div style="margin: 30px 0; padding: 20px; border-left: 2px solid var(--gold-primary); background: rgba(197, 160, 89, 0.05);">
+                    <h4 style="color: var(--gold-primary); margin-top: 0;">Goodmayes Station Parking</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">
+                        Secure parking is available immediately adjacent to the venue at the <strong>Goodmayes Station Car Park</strong>. Just a 1-minute walk to the lounge entrance.
+                    </p>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: var(--text-muted);">
+                    *Please check local signage for evening rates and availability.
+                </p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Goodmayes+Station+Car+Park" target="_blank" class="btn-luxury">Navigate to Parking</a>
+            </div>
+        </div>
+
+        <div style="border: 1px solid var(--gold-primary); position: relative;">
+            <div style="position: absolute; top: 15px; left: 15px; background: var(--gold-primary); color: #000; padding: 5px 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; z-index: 10;">
+                Parking Location
+            </div>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.245826978184!2d0.1085!3d51.5654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a6e8f5b5b5b5%3A0x1234567890abcdef!2sGoodmayes%20Station%20Car%20Park!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" 
+                width="100%" 
+                height="400" 
+                style="border:0; filter: grayscale(1) invert(0.9);" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+<footer class="dev-footer" style="padding: 80px 10%; background: #080808; border-top: 1px solid #c5a059;">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        
+        <div style="margin-bottom: 40px;">
+            <p style="text-transform: uppercase; letter-spacing: 5px; color: #a0a0a0; font-size: 0.7rem; margin-bottom: 10px;">Project Development</p>
+            <h2 style="font-family: 'Playfair Display', serif; color: #c5a059; font-size: 2rem; margin: 0;">Designed & Maintained by Arsh Kazi</h2>
+            <div style="width: 50px; height: 1px; background: #c5a059; margin: 20px auto;"></div>
+        </div>
+
+        <div style="max-width: 600px; margin-bottom: 40px;">
+            <p style="color: #f4f4f4; font-size: 1.1rem; line-height: 1.6; font-weight: 300;">
+                Looking to elevate your digital presence with a bespoke, high-end web experience? 
+                I specialize in creating luxury digital solutions tailored to your brand's unique identity.
+            </p>
+        </div>
+
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <a href="mailto:arsh.lakers@gmail.com?subject=Project Inquiry - [Your Name]&body=Hi Arsh, I would like to schedule a call to discuss a new project..." 
+               class="btn-luxury" style="background: #c5a059; color: #000; font-weight: 600;">
+               Schedule a Call
+            </a>
+            
+            <a href="mailto:arsh.lakers@gmail.com" class="btn-luxury">
+               Contact Me
+            </a>
+        </div>
+
+        <p style="margin-top: 60px; font-size: 0.75rem; color: #444; letter-spacing: 2px;">
+            &copy; 2026 ARSH KAZI DIGITAL SOLUTIONS. ALL RIGHTS RESERVED.
+        </p>
+    </div>
+</footer>
+
+    <script>
+        let navOpen = false;
+        function toggleNav() {
+            const nav = document.getElementById("mySidenav");
+            nav.style.width = navOpen ? "0" : "300px";
+            navOpen = !navOpen;
+        }
+    </script>
+</body>
+</html>
